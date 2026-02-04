@@ -23,7 +23,8 @@ These steps validate the RBAC changes and the ability of the app pod to list sec
 3. Exec into an app pod:
 
    ```
-   kubectl exec todoapp-67448f6b7-xwr7c -it -n todoapp -- sh
+      POD_NAME=$(kubectl get pods -n todoapp -l app=todoapp -o jsonpath='{.items[0].metadata.name}')
+      kubectl exec -it $POD_NAME -n todoapp -- sh
    ```
 
 4. Run command to take a json with secrets
