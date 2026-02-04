@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: secrets-reader
+  name: secrets-reader-1
   namespace: todoapp
 
 ---
@@ -23,7 +23,7 @@ metadata:
   namespace: todoapp
 subjects:
   - kind: ServiceAccount
-    name: secrets-reader
+    name: secrets-reader-1
     namespace: todoapp
 roleRef:
   kind: Role
